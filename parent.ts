@@ -15,7 +15,7 @@ async function main(): Promise<void> {
         childProcesses[i] = childProcess;
 
         forkPromises[i] = new Promise(resolve => {
-            childProcess.once('message', (msg) => {
+            childProcess.once('message', msg => {
                 log('Message from child', msg);
                 resolve();
             })
